@@ -1,8 +1,8 @@
 import { Given, When, Then, Before } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 import { CartPage } from "../pages/cartPage";
-import { HomePage } from "../pages/homePage";
-import { ProductPage } from "../pages/productPage";
+import { HomePage } from "../pages/HomePage";
+import { ProductPage } from "../pages/ProductPage";
 import { SearchPage } from "../pages/searchPage";
 import { SearchResultsPage } from "../pages/searchResultsPage";
 import { page } from "../support/hooks";

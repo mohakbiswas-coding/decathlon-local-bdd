@@ -1,9 +1,9 @@
 import { Given, When, Then, Before } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
-import { HomePage } from "../pages/homePage";
+import { HomePage } from "../pages/HomePage";
 import { SearchPage } from "../pages/searchPage";
 import { SearchResultsPage } from "../pages/searchResultsPage";
-import { ProductPage } from "../pages/productPage";
+import { ProductPage } from "../pages/ProductPage";
 import { page } from "../support/hooks";
 
 import searchData from "../test-data/search.json";

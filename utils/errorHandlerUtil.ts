@@ -1,6 +1,6 @@
 import { Page } from '@playwright/test';
 import { logger } from './logger';
-import { runReport, captureScreenShot } from './runReport';
+import { runReport, captureScreenShot } from './RunReport';
 
 /**
  * Author Name: Sarthak Pimprikar

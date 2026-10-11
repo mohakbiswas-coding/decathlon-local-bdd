@@ -1,6 +1,6 @@
 import { Given, When, Then, Before } from "@cucumber/cucumber";
 import { CartPage } from "../pages/cartPage";
-import { ProductPage } from "../pages/productPage";
+import { ProductPage } from "../pages/ProductPage";
 import { page } from "../support/hooks";
 import { takeNormalScreenshot } from "../utils/ScreenshotUtil";
 
