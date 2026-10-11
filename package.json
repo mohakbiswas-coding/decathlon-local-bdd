@@ -1,0 +1,28 @@
+{
+  "name": "new_proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^13.3.0",
+    "cucumber": "^6.0.7",
+    "dotenv": "^18.0.6",
+    "playwright": "^1.63.0",
+    "playwright-core": "^1.63.0",
+    "undici-types": "^8.9.0"
+  }
+}

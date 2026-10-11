@@ -1,0 +1,637 @@
+[
+  {
+    "timestamp": "06/10/2026, 10:13:02 IST",
+    "level": "INFO",
+    "message": "Launching Man Matters application"
+  },
+  {
+    "timestamp": "06/10/2026, 10:13:12 IST",
+    "level": "INFO",
+    "message": "Verifying home page heading"
+  },
+  {
+    "timestamp": "06/10/2026, 10:16:36 IST",
+    "level": "INFO",
+    "message": "Launching Man Matters application"
+  },
+  {
+    "timestamp": "06/10/2026, 10:16:45 IST",
+    "level": "INFO",
+    "message": "Verifying home page heading"
+  },
+  {
+    "timestamp": "06/10/2026, 10:20:53 IST",
+    "level": "INFO",
+    "message": "Launching Man Matters application"
+  },
+  {
+    "timestamp": "06/10/2026, 10:20:59 IST",
+    "level": "INFO",
+    "message": "Verifying home page heading"
+  },
+  {
+    "timestamp": "06/10/2026, 10:23:36 IST",
+    "level": "INFO",
+    "message": "Launching Man Matters application"
+  },
+  {
+    "timestamp": "06/10/2026, 10:23:39 IST",
+    "level": "INFO",
+    "message": "Verifying home page heading"
+  },
+  {
+    "timestamp": "06/10/2026, 10:27:19 IST",
+    "level": "INFO",
+    "message": "Launching Man Matters application"
+  },
+  {
+    "timestamp": "06/10/2026, 10:27:28 IST",
+    "level": "INFO",
+    "message": "Verifying home page heading"
+  },
+  {
+    "timestamp": "06/10/2026, 10:29:57 IST",
+    "level": "INFO",
+    "message": "Launching Man Matters application"
+  },
+  {
+    "timestamp": "06/10/2026, 10:30:07 IST",
+    "level": "INFO",
+    "message": "Verifying home page heading"
+  },
+  {
+    "timestamp": "06/10/2026, 10:30:07 IST",
+    "level": "INFO",
+    "message": "Clicking Take Hair Test button"
+  },
+  {
+    "timestamp": "06/10/2026, 10:32:08 IST",
+    "level": "INFO",
+    "message": "Launching Man Matters application"
+  },
+  {
+    "timestamp": "06/10/2026, 10:32:17 IST",
+    "level": "INFO",
+    "message": "Verifying home page heading"
+  },
+  {
+    "timestamp": "06/10/2026, 10:32:17 IST",
+    "level": "INFO",
+    "message": "Clicking Take Hair Test button"
+  },
+  {
+    "timestamp": "06/10/2026, 10:35:38 IST",
+    "level": "INFO",
+    "message": "Launching Man Matters application"
+  },
+  {
+    "timestamp": "06/10/2026, 10:35:52 IST",
+    "level": "INFO",
+    "message": "Verifying home page heading"
+  },
+  {
+    "timestamp": "06/10/2026, 10:35:52 IST",
+    "level": "INFO",
+    "message": "Clicking Take Hair Test button"
+  },
+  {
+    "timestamp": "06/10/2026, 12:14:48 IST",
+    "level": "INFO",
+    "message": "TC02 Execution Started"
+  },
+  {
+    "timestamp": "06/10/2026, 12:14:56 IST",
+    "level": "INFO",
+    "message": "Navigated to Man Matters Home Page"
+  },
+  {
+    "timestamp": "06/10/2026, 12:14:56 IST",
+    "level": "INFO",
+    "message": "Clicked All Products"
+  },
+  {
+    "timestamp": "06/10/2026, 12:14:56 IST",
+    "level": "INFO",
+    "message": "Verified Products Page URL"
+  },
+  {
+    "timestamp": "06/10/2026, 12:14:56 IST",
+    "level": "INFO",
+    "message": "Selected Hair Category"
+  },
+  {
+    "timestamp": "06/10/2026, 12:14:57 IST",
+    "level": "INFO",
+    "message": "Opened First Product"
+  },
+  {
+    "timestamp": "06/10/2026, 12:14:58 IST",
+    "level": "INFO",
+    "message": "Verified Product Details Page"
+  },
+  {
+    "timestamp": "06/10/2026, 12:14:58 IST",
+    "level": "INFO",
+    "message": "Product Details Screenshot Captured"
+  },
+  {
+    "timestamp": "06/10/2026, 12:14:59 IST",
+    "level": "INFO",
+    "message": "Clicked Add To Cart"
+  },
+  {
+    "timestamp": "06/10/2026, 12:14:59 IST",
+    "level": "INFO",
+    "message": "Add To Cart Screenshot Captured"
+  },
+  {
+    "timestamp": "06/10/2026, 12:14:59 IST",
+    "level": "INFO",
+    "message": "TC02 Execution Completed Successfully"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:22 IST",
+    "level": "INFO",
+    "message": "TC02 Execution Started"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:30 IST",
+    "level": "INFO",
+    "message": "Navigated to Man Matters Home Page"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:30 IST",
+    "level": "INFO",
+    "message": "Clicked All Products"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:30 IST",
+    "level": "INFO",
+    "message": "Verified Products Page URL"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:31 IST",
+    "level": "INFO",
+    "message": "Selected Hair Category"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:31 IST",
+    "level": "INFO",
+    "message": "Opened First Product"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:32 IST",
+    "level": "INFO",
+    "message": "Verified Product Details Page"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:33 IST",
+    "level": "INFO",
+    "message": "Product Details Screenshot Captured"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:33 IST",
+    "level": "INFO",
+    "message": "Clicked Add To Cart"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:33 IST",
+    "level": "INFO",
+    "message": "Add To Cart Screenshot Captured"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:33 IST",
+    "level": "INFO",
+    "message": "TC02 Execution Completed Successfully"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:36 IST",
+    "level": "INFO",
+    "message": "TC03 Execution Started"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:44 IST",
+    "level": "INFO",
+    "message": "Navigated to Man Matters Home Page"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:45 IST",
+    "level": "INFO",
+    "message": "Hair Assessment Started"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:52 IST",
+    "level": "INFO",
+    "message": "Hair Assessment Questions Completed"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:53 IST",
+    "level": "INFO",
+    "message": "Mobile Number Entered"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:53 IST",
+    "level": "INFO",
+    "message": "User Details Submitted"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:54 IST",
+    "level": "INFO",
+    "message": "Screenshot Captured"
+  },
+  {
+    "timestamp": "06/10/2026, 12:28:54 IST",
+    "level": "INFO",
+    "message": "TC03 Completed Successfully"
+  },
+  {
+    "timestamp": "06/10/2026, 12:29:47 IST",
+    "level": "INFO",
+    "message": "TC02 Execution Started"
+  },
+  {
+    "timestamp": "06/10/2026, 12:29:53 IST",
+    "level": "INFO",
+    "message": "Navigated to Man Matters Home Page"
+  },
+  {
+    "timestamp": "06/10/2026, 12:29:53 IST",
+    "level": "INFO",
+    "message": "Clicked All Products"
+  },
+  {
+    "timestamp": "06/10/2026, 12:29:53 IST",
+    "level": "INFO",
+    "message": "Verified Products Page URL"
+  },
+  {
+    "timestamp": "06/10/2026, 12:29:54 IST",
+    "level": "INFO",
+    "message": "Selected Hair Category"
+  },
+  {
+    "timestamp": "06/10/2026, 12:29:54 IST",
+    "level": "INFO",
+    "message": "Opened First Product"
+  },
+  {
+    "timestamp": "06/10/2026, 12:29:56 IST",
+    "level": "INFO",
+    "message": "Verified Product Details Page"
+  },
+  {
+    "timestamp": "06/10/2026, 12:29:56 IST",
+    "level": "INFO",
+    "message": "Product Details Screenshot Captured"
+  },
+  {
+    "timestamp": "06/10/2026, 12:29:56 IST",
+    "level": "INFO",
+    "message": "Clicked Add To Cart"
+  },
+  {
+    "timestamp": "06/10/2026, 12:29:56 IST",
+    "level": "INFO",
+    "message": "Add To Cart Screenshot Captured"
+  },
+  {
+    "timestamp": "06/10/2026, 12:29:56 IST",
+    "level": "INFO",
+    "message": "TC02 Execution Completed Successfully"
+  },
+  {
+    "timestamp": "06/10/2026, 12:29:59 IST",
+    "level": "INFO",
+    "message": "TC03 Execution Started"
+  },
+  {
+    "timestamp": "06/10/2026, 12:30:07 IST",
+    "level": "INFO",
+    "message": "Navigated to Man Matters Home Page"
+  },
+  {
+    "timestamp": "06/10/2026, 12:30:07 IST",
+    "level": "INFO",
+    "message": "Hair Assessment Started"
+  },
+  {
+    "timestamp": "06/10/2026, 12:30:14 IST",
+    "level": "INFO",
+    "message": "Hair Assessment Questions Completed"
+  },
+  {
+    "timestamp": "06/10/2026, 12:30:15 IST",
+    "level": "INFO",
+    "message": "Mobile Number Entered"
+  },
+  {
+    "timestamp": "06/10/2026, 12:30:15 IST",
+    "level": "INFO",
+    "message": "User Details Submitted"
+  },
+  {
+    "timestamp": "06/10/2026, 12:30:15 IST",
+    "level": "INFO",
+    "message": "Screenshot Captured"
+  },
+  {
+    "timestamp": "06/10/2026, 12:30:15 IST",
+    "level": "INFO",
+    "message": "TC03 Completed Successfully"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:17 IST",
+    "level": "INFO",
+    "message": "TC02 Execution Started"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:23 IST",
+    "level": "INFO",
+    "message": "Navigated to Man Matters Home Page"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:23 IST",
+    "level": "INFO",
+    "message": "Clicked All Products"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:24 IST",
+    "level": "INFO",
+    "message": "Verified Products Page URL"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:24 IST",
+    "level": "INFO",
+    "message": "Selected Hair Category"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:25 IST",
+    "level": "INFO",
+    "message": "Opened First Product"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:26 IST",
+    "level": "INFO",
+    "message": "Verified Product Details Page"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:26 IST",
+    "level": "INFO",
+    "message": "Product Details Screenshot Captured"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:26 IST",
+    "level": "INFO",
+    "message": "Clicked Add To Cart"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:26 IST",
+    "level": "INFO",
+    "message": "Add To Cart Screenshot Captured"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:26 IST",
+    "level": "INFO",
+    "message": "TC02 Execution Completed Successfully"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:28 IST",
+    "level": "INFO",
+    "message": "TC03 Execution Started"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:34 IST",
+    "level": "INFO",
+    "message": "Navigated to Man Matters Home Page"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:35 IST",
+    "level": "INFO",
+    "message": "Hair Assessment Started"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:41 IST",
+    "level": "INFO",
+    "message": "Hair Assessment Questions Completed"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:42 IST",
+    "level": "INFO",
+    "message": "Mobile Number Entered"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:43 IST",
+    "level": "INFO",
+    "message": "User Details Submitted"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:43 IST",
+    "level": "INFO",
+    "message": "Screenshot Captured"
+  },
+  {
+    "timestamp": "08/10/2026, 09:44:43 IST",
+    "level": "INFO",
+    "message": "TC03 Completed Successfully"
+  },
+  {
+    "timestamp": "08/10/2026, 09:45:38 IST",
+    "level": "INFO",
+    "message": "TC02 Execution Started"
+  },
+  {
+    "timestamp": "08/10/2026, 09:45:46 IST",
+    "level": "INFO",
+    "message": "Navigated to Man Matters Home Page"
+  },
+  {
+    "timestamp": "08/10/2026, 09:45:46 IST",
+    "level": "INFO",
+    "message": "Clicked All Products"
+  },
+  {
+    "timestamp": "08/10/2026, 09:45:46 IST",
+    "level": "INFO",
+    "message": "Verified Products Page URL"
+  },
+  {
+    "timestamp": "08/10/2026, 09:45:47 IST",
+    "level": "INFO",
+    "message": "Selected Hair Category"
+  },
+  {
+    "timestamp": "08/10/2026, 09:45:47 IST",
+    "level": "INFO",
+    "message": "Opened First Product"
+  },
+  {
+    "timestamp": "08/10/2026, 09:45:48 IST",
+    "level": "INFO",
+    "message": "Verified Product Details Page"
+  },
+  {
+    "timestamp": "08/10/2026, 09:45:48 IST",
+    "level": "INFO",
+    "message": "Product Details Screenshot Captured"
+  },
+  {
+    "timestamp": "08/10/2026, 09:45:48 IST",
+    "level": "INFO",
+    "message": "Clicked Add To Cart"
+  },
+  {
+    "timestamp": "08/10/2026, 09:45:48 IST",
+    "level": "INFO",
+    "message": "Add To Cart Screenshot Captured"
+  },
+  {
+    "timestamp": "08/10/2026, 09:45:48 IST",
+    "level": "INFO",
+    "message": "TC02 Execution Completed Successfully"
+  },
+  {
+    "timestamp": "08/10/2026, 09:45:51 IST",
+    "level": "INFO",
+    "message": "TC03 Execution Started"
+  },
+  {
+    "timestamp": "08/10/2026, 09:45:57 IST",
+    "level": "INFO",
+    "message": "Navigated to Man Matters Home Page"
+  },
+  {
+    "timestamp": "08/10/2026, 09:45:57 IST",
+    "level": "INFO",
+    "message": "Hair Assessment Started"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:04 IST",
+    "level": "INFO",
+    "message": "Hair Assessment Questions Completed"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:05 IST",
+    "level": "INFO",
+    "message": "Mobile Number Entered"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:05 IST",
+    "level": "INFO",
+    "message": "User Details Submitted"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:06 IST",
+    "level": "INFO",
+    "message": "Screenshot Captured"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:06 IST",
+    "level": "INFO",
+    "message": "TC03 Completed Successfully"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:34 IST",
+    "level": "INFO",
+    "message": "TC02 Execution Started"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:43 IST",
+    "level": "INFO",
+    "message": "Navigated to Man Matters Home Page"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:44 IST",
+    "level": "INFO",
+    "message": "Clicked All Products"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:44 IST",
+    "level": "INFO",
+    "message": "Verified Products Page URL"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:44 IST",
+    "level": "INFO",
+    "message": "Selected Hair Category"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:45 IST",
+    "level": "INFO",
+    "message": "Opened First Product"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:45 IST",
+    "level": "INFO",
+    "message": "Verified Product Details Page"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:46 IST",
+    "level": "INFO",
+    "message": "Product Details Screenshot Captured"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:46 IST",
+    "level": "INFO",
+    "message": "Clicked Add To Cart"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:46 IST",
+    "level": "INFO",
+    "message": "Add To Cart Screenshot Captured"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:46 IST",
+    "level": "INFO",
+    "message": "TC02 Execution Completed Successfully"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:47 IST",
+    "level": "INFO",
+    "message": "TC03 Execution Started"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:55 IST",
+    "level": "INFO",
+    "message": "Navigated to Man Matters Home Page"
+  },
+  {
+    "timestamp": "08/10/2026, 09:46:56 IST",
+    "level": "INFO",
+    "message": "Hair Assessment Started"
+  },
+  {
+    "timestamp": "08/10/2026, 09:47:02 IST",
+    "level": "INFO",
+    "message": "Hair Assessment Questions Completed"
+  },
+  {
+    "timestamp": "08/10/2026, 09:47:03 IST",
+    "level": "INFO",
+    "message": "Mobile Number Entered"
+  },
+  {
+    "timestamp": "08/10/2026, 09:47:04 IST",
+    "level": "INFO",
+    "message": "User Details Submitted"
+  },
+  {
+    "timestamp": "08/10/2026, 09:47:04 IST",
+    "level": "INFO",
+    "message": "Screenshot Captured"
+  },
+  {
+    "timestamp": "08/10/2026, 09:47:04 IST",
+    "level": "INFO",
+    "message": "TC03 Completed Successfully"
+  },
+  {
+    "timestamp": "08/10/2026, 10:33:38 IST",
+    "level": "INFO",
+    "message": "TC02 completed successfully"
+  },
+  {
+    "timestamp": "08/10/2026, 10:33:58 IST",
+    "level": "INFO",
+    "message": "TC03 completed successfully"
+  }
+]
