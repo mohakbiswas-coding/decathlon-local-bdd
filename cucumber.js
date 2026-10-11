@@ -2,8 +2,8 @@ module.exports = {
   default: {
     requireModule: ['ts-node/register'],
     require: [
-      'step-definitions/**/*.ts',
-      'support/**/*.ts'
+      'support/**/*.ts',
+      'step-definitions/**/*.ts'
     ],
     paths: [
       'features/**/*.feature'

@@ -1,0 +1,17 @@
+{
+  "searchKeyword": "Shoes for men",
+  "e2eSearchKeyword": "Kiprun Kipcore",
+  "partialKeyword": "Cy",
+  "unrelatedKeywordExpected": "Sorry, No Results Found...!",
+  "unrelatedKeyword": "mklfmsmclkfjskhlkhjs8989898978",
+  "overlaySections": {
+    "recommended": "Recommended For You",
+    "bestsellers": "Bestsellers"
+  },
+  "urls": {
+    "searchResults": "/search?query=",
+    "queryParam": "query",
+    "productPath": "/p/"
+  },
+  "cardsToCheck": 2
+}

@@ -1,19 +1,29 @@
-import { Page, expect} from '@playwright/test';
-import { HomeLocators } from '../locators/homeLocators';
-import { CommonMethods } from '../utils/commonMethods';
+import { expect, Page } from '@playwright/test';
+import { HeaderLocators } from '../ui-store/header.locators';
+import { BasePage } from './basePage';
 
-export class HomePage {
-  private locator: HomeLocators;
+export class HomePage extends BasePage {
+  readonly header: HeaderLocators;
 
-  constructor(private page: Page) {
-    this.locator = new HomeLocators(page);
+  constructor(page: Page) {
+    super(page);
+    this.header = new HeaderLocators(page);
   }
 
+  async launch(): Promise<void> {
+    await this.open('/');
+  }
 
-async clickTakeHairTest() {
+  async waitForHeader(): Promise<void> {
+    await this.waitUntilVisible(this.header.logo);
+    await this.waitUntilVisible(this.header.searchField);
+  }
 
-    await this.locator.takeHairTestButton.scrollIntoViewIfNeeded();
+  async openSearch(): Promise<void> {
+    await this.click(this.header.searchField);
+  }
 
-    await this.locator.takeHairTestButton.click();
-}
+  async verifyBackgroundPageRemainsVisible(): Promise<void> {
+    await expect(this.header.logo).toBeVisible();
+  }
 }
