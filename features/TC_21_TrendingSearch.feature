@@ -1,6 +1,6 @@
 Feature: Decathlon India - Trending search
 
-  @TC_21
+  @TC_21 @sanity
   Scenario: TC_21 - Trending search
 
     Given Launch the Decathlon website

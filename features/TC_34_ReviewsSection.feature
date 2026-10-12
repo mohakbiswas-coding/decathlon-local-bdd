@@ -1,6 +1,6 @@
 Feature: Decathlon India - Reviews section
 
-  @TC_34
+  @TC_34 @regression
   Scenario: TC_34 - Reviews section
 
     Given Open the Product Details Page

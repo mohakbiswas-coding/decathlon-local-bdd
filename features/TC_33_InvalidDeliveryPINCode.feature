@@ -1,6 +1,6 @@
 Feature: Decathlon India - Invalid delivery PIN code
 
-  @TC_33
+  @TC_33 @regression
   Scenario: TC_33 - Invalid delivery PIN code
 
     Given Open the Product Details Page

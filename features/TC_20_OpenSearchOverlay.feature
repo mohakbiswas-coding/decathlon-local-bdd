@@ -1,6 +1,6 @@
 Feature: Decathlon India - Open search overlay
 
-  @TC_20
+  @TC_20 @sanity
   Scenario: TC_20 - Open search overlay
 
     Given Launch the Decathlon website

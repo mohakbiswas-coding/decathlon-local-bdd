@@ -1,6 +1,6 @@
 Feature: Decathlon India - Product details drawer
 
-  @TC_31
+  @TC_31 @regression
   Scenario: TC_31 - Product details drawer
 
     Given Open the Product Details Page

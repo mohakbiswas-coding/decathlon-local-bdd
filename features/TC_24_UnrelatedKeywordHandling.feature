@@ -1,6 +1,6 @@
 Feature: Decathlon India - Unrelated keyword handling
 
-  @TC_24
+  @TC_24 @regression
   Scenario: TC_24 - Unrelated keyword handling
 
     Given Launch the Decathlon website

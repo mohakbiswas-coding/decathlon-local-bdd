@@ -1,6 +1,6 @@
 Feature: Decathlon India - Open PDP from Search
 
-  @TC_25
+  @TC_25 @smoke
   Scenario: TC_25 - Open PDP from Search
 
     Given Open a Search results page

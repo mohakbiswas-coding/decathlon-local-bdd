@@ -1,6 +1,6 @@
 Feature: Decathlon India - Size selection is mandatory
 
-  @TC_28
+  @TC_28 @sanity
   Scenario: TC_28 - Size selection is mandatory
 
     Given Open a valid size-based Product Details Page

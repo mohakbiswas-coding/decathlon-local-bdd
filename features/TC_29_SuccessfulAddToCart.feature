@@ -1,6 +1,6 @@
 Feature: Decathlon India - Successful Add to Cart
 
-  @TC_29
+  @TC_29 @snoke
   Scenario: TC_29 - Successful Add to Cart
 
     Given Open a valid in-stock Product Details Page
