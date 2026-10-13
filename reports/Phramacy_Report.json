@@ -1,0 +1,111 @@
+{
+  "total": 21,
+  "entries": [
+    {
+      "step": "Launching the home page",
+      "status": "passed",
+      "at": "2026.10.13.15.28.46"
+    },
+    {
+      "step": "Home page launched successfully",
+      "status": "passed",
+      "at": "2026.10.13.15.28.49"
+    },
+    {
+      "step": "Waiting for the header logo and search field",
+      "status": "passed",
+      "at": "2026.10.13.15.28.49"
+    },
+    {
+      "step": "Header logo and search field are visible",
+      "status": "passed",
+      "at": "2026.10.13.15.28.49"
+    },
+    {
+      "step": "Opening the search field",
+      "status": "passed",
+      "at": "2026.10.13.15.28.49"
+    },
+    {
+      "step": "Search field opened successfully",
+      "status": "passed",
+      "at": "2026.10.13.15.28.50"
+    },
+    {
+      "step": "Verifying that the search overlay is open",
+      "status": "passed",
+      "at": "2026.10.13.15.28.50"
+    },
+    {
+      "step": "Search overlay open state verified successfully",
+      "status": "passed",
+      "at": "2026.10.13.15.28.50"
+    },
+    {
+      "step": "Verifying that the search input is visible",
+      "status": "passed",
+      "at": "2026.10.13.15.28.50"
+    },
+    {
+      "step": "Search input visibility verified successfully",
+      "status": "passed",
+      "at": "2026.10.13.15.28.50"
+    },
+    {
+      "step": "Entering the keyword Kiprun Kipcore",
+      "status": "passed",
+      "at": "2026.10.13.15.28.50"
+    },
+    {
+      "step": "Keyword entered successfully",
+      "status": "passed",
+      "at": "2026.10.13.15.28.51"
+    },
+    {
+      "step": "Verifying that the search input has the value Kiprun Kipcore",
+      "status": "passed",
+      "at": "2026.10.13.15.28.51"
+    },
+    {
+      "step": "Search input value verified successfully",
+      "status": "passed",
+      "at": "2026.10.13.15.28.51"
+    },
+    {
+      "step": "Submitting the search",
+      "status": "passed",
+      "at": "2026.10.13.15.28.51"
+    },
+    {
+      "step": "Search submitted successfully",
+      "status": "passed",
+      "at": "2026.10.13.15.28.51"
+    },
+    {
+      "step": "Waiting for the search results",
+      "status": "passed",
+      "at": "2026.10.13.15.28.51"
+    },
+    {
+      "step": "Search results are visible",
+      "status": "passed",
+      "at": "2026.10.13.15.28.51"
+    },
+    {
+      "step": "Verifying that the URL contains query",
+      "status": "passed",
+      "at": "2026.10.13.15.28.51"
+    },
+    {
+      "step": "Failed to verify the query in the URL",
+      "status": "failed",
+      "at": "2026.10.13.15.28.51"
+    },
+    {
+      "step": "screenshot captured: Failed to verify the query in the URL Failure",
+      "status": "passed",
+      "at": "2026.10.13.15.28.51",
+      "screenshot": "C:\\Projects\\decathlon-local-bdd\\reports\\screenshots\\Failed to verify the query in the URL Failure-13-10-2026 15-28-51.png"
+    }
+  ]
+}

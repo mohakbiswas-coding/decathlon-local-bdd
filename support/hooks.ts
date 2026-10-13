@@ -40,7 +40,7 @@ BeforeAll(async () => {
 Before(async () => {
   context = await browser.newContext({
     ...devices["Desktop Chrome"],
-    baseURL: process.env.BASE_URL || "https://www.decathlon.in/",
+    baseURL: process.env.BASE_URL!,
   });
 
   page = await context.newPage();

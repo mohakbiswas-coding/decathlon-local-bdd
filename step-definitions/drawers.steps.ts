@@ -31,9 +31,12 @@ Then("Verify the drawer heading is Product details", async function () {
   await drawerPage.verifyDrawerHeading();
 });
 
-Then("Verify the product ID is displayed in the drawer", async function () {
-  await drawerPage.verifyTextInDrawer(productData.drawers.details.idLabel);
-});
+Then(
+  "Verify the product ID {string} is displayed in the drawer",
+  async function (productIdLabel: string) {
+    await drawerPage.verifyTextInDrawer(productIdLabel);
+  },
+);
 
 Then("Verify the drawer close X is visible", async function () {
   await drawerPage.verifyCloseButtonIsVisible();
@@ -89,9 +92,9 @@ Then(
 );
 
 When(
-  "Locate the Enter pincode field, clear it and enter the invalid PIN code",
-  async function () {
-    await drawerPage.enterPincode(productData.delivery.invalidPincode);
+  "Locate the Enter pincode field, clear it and enter the invalid PIN code {string}",
+  async function (invalidPincode: string) {
+    await drawerPage.enterPincode(invalidPincode);
   },
 );
 
@@ -100,12 +103,10 @@ When("Click the arrow submit button", async function () {
 });
 
 Then(
-  "Wait for validation and verify the red error message appears",
-  async function () {
-    await drawerPage.verifyPincodeError(
-      productData.delivery.invalidPincodeError,
-    );
-    await takeNormalScreenshot(page, "TC_33 invalid pincode error");
+  "Wait for validation and verify the red error message {string} appears",
+  async function (errorMessage: string) {
+    await drawerPage.verifyPincodeError(errorMessage);
+    await takeNormalScreenshot(page, `TC_33 invalid pincode error ${errorMessage}`);
   },
 );
 

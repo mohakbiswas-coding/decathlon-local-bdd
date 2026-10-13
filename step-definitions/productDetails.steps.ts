@@ -32,21 +32,31 @@ Given("Open the valid product URL for the product ID", async function () {
   await productPage.openProduct(productData.urls.pdp);
 });
 
-Then("Verify breadcrumbs are visible", async function () {
-  await productPage.verifyBreadcrumbs(productData.product.breadcrumbs);
+Then(
+  "Verify breadcrumbs {string} are visible",
+  async function (breadcrumbs: string) {
+    const crumbs = breadcrumbs.split(">").map((crumb) => crumb.trim());
+    await productPage.verifyBreadcrumbs(crumbs);
+  },
+);
+
+Then("Verify the brand {string} is displayed", async function (brand: string) {
+  await productPage.verifyBrand(brand);
 });
 
-Then("Verify the brand is displayed", async function () {
-  await productPage.verifyBrand(productData.product.brand);
-});
+Then(
+  "Verify the product name {string} is displayed",
+  async function (productName: string) {
+    await productPage.verifyNameContains(productName);
+  },
+);
 
-Then("Verify the product name is displayed", async function () {
-  await productPage.verifyNameContains(productData.product.name);
-});
-
-Then("Verify the product ID is displayed", async function () {
-  await productPage.verifyProductId(productData.product.id);
-});
+Then(
+  "Verify the product ID {string} is displayed",
+  async function (productId: string) {
+    await productPage.verifyProductId(productId);
+  },
+);
 
 Then("Verify the main product image is visible", async function () {
   await productPage.waitUntilVisible(productPage.product.mainImage);
@@ -78,11 +88,12 @@ When("Wait for the Colour section to be visible", async function () {
   );
 });
 
-Then("Verify multiple colour thumbnails are displayed", async function () {
-  await productPage.verifyColourOptionsAreVisible(
-    productData.colour.minimumThumbnails,
-  );
-});
+Then(
+  "Verify at least {int} colour thumbnails are displayed",
+  async function (minimumThumbnails: number) {
+    await productPage.verifyColourOptionsAreVisible(minimumThumbnails);
+  },
+);
 
 When("Record the current product URL", async function () {
   urlBefore = page.url();
@@ -93,9 +104,9 @@ When("Record the current main product image", async function () {
 });
 
 When(
-  "Click a different colour thumbnail and wait for the variant update",
-  async function () {
-    await productPage.selectColour(productData.colour.thumbnailToSelect);
+  "Click colour thumbnail {int} and wait for the variant update",
+  async function (thumbnailToSelect: number) {
+    await productPage.selectColour(thumbnailToSelect);
   },
 );
 
@@ -142,11 +153,9 @@ When("Click Add to cart without selecting a size", async function () {
 });
 
 Then(
-  'Verify the red message "Please select a size" appears',
-  async function () {
-    await productPage.verifySizeErrorIsVisible(
-      productData.labels.selectSizeError,
-    );
+  "Verify the red message {string} appears",
+  async function (sizeError: string) {
+    await productPage.verifySizeErrorIsVisible(sizeError);
     await takeNormalScreenshot(page, "TC_28 size error message");
   },
 );
@@ -178,14 +187,14 @@ When("Wait for the size options and Add to cart button", async function () {
   await productPage.verifySizeOptionsAndAddToCartAreVisible();
 });
 
-When("Select the available size", async function () {
-  await productPage.selectSize(productData.size.toSelect);
+When("Select the available size {string}", async function (size: string) {
+  await productPage.selectSize(size);
 });
 
 Then(
-  "Verify the low-stock label is displayed for the selected size when present",
-  async function () {
-    await productPage.verifyLowStockIfAvailable(productData.size.lowStockLabel);
+  "Verify the low-stock label {string} is displayed for the selected size when present",
+  async function (lowStockLabel: string) {
+    await productPage.verifyLowStockIfAvailable(lowStockLabel);
   },
 );
 
@@ -204,6 +213,9 @@ Then("Verify the Cart badge increases by one", async function () {
   await productPage.verifyCartCountIs(cartCountBefore + 1);
 });
 
-Then("Verify no size-validation message is displayed", async function () {
-  await productPage.verifySizeErrorIsHidden(productData.labels.selectSizeError);
-});
+Then(
+  "Verify no size-validation message {string} is displayed",
+  async function (sizeError: string) {
+    await productPage.verifySizeErrorIsHidden(sizeError);
+  },
+);

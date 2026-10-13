@@ -144,13 +144,16 @@ When("Click inside the Search input", async function () {
   await searchPage.click(searchPage.search.searchInput);
 });
 
-When("Enter the partial keyword", async function () {
-  await searchPage.enterKeyword(searchData.partialKeyword);
+When("Enter the partial keyword {string}", async function (partialKeyword: string) {
+  await searchPage.enterKeyword(partialKeyword);
 });
 
-Then("Verify the keyword remains visible in the input", async function () {
-  await searchPage.verifyInputHasValue(searchData.partialKeyword);
-});
+Then(
+  "Verify the keyword {string} remains visible in the input",
+  async function (partialKeyword: string) {
+    await searchPage.verifyInputHasValue(partialKeyword);
+  },
+);
 
 Then("Verify the clear X control appears in the input", async function () {
   await searchPage.verifyClearButtonIsVisible();
@@ -171,31 +174,40 @@ When("Wait for the Search results page to load", async function () {
   await resultsPage.waitForResults();
 });
 
-Then("Verify the URL contains a search query parameter", async function () {
-  await resultsPage.verifyUrlContainsQuery(searchData.urls.queryParam);
-});
+Then(
+  "Verify the URL contains the search query parameter {string}",
+  async function (queryParam: string) {
+    await resultsPage.verifyUrlContainsQuery(queryParam);
+  },
+);
 
-Then("Verify product results are displayed", async function () {
-  await resultsPage.verifyProductCardIsVisible();
-});
+Then(
+  "Verify at least {int} product results are displayed",
+  async function (cardsToCheck: number) {
+    await resultsPage.verifyProductCardIsVisible();
+    for (let index = 0; index < cardsToCheck; index++) {
+      await expect(resultsPage.card(index).name).toBeVisible();
+    }
+  },
+);
 
-Given("Open a Search results page", async function () {
-  await resultsPage.openResults(
-    searchData.urls.searchResults,
-    searchData.searchKeyword,
-  );
-});
+Given(
+  "Open a Search results page for {string}",
+  async function (searchKeyword: string) {
+    await resultsPage.openResults(searchData.urls.searchResults, searchKeyword);
+  },
+);
 
 When("Wait for the product grid to be visible", async function () {
   await resultsPage.waitForResults();
 });
 
 Then(
-  "Verify the product cards: image, name, price, wishlist, add to cart \\(+ optional info\\)",
-  async function () {
+  "Verify the first {int} product cards: image, name, price, wishlist, add to cart \\(+ optional info\\)",
+  async function (cardsToCheck: number) {
     // Steps 3 to 11: core checks on the first card.
     // Step 12: repeat the same checks on the next card(s).
-    for (let index = 0; index < searchData.cardsToCheck; index++) {
+    for (let index = 0; index < cardsToCheck; index++) {
       await resultsPage.verifyCardInfo(index);
     }
   },
@@ -205,25 +217,31 @@ When("Clear any existing Search text", async function () {
   await searchPage.clearSearchText();
 });
 
-When("Enter the unrelated keyword", async function () {
-  await searchPage.enterKeyword(searchData.unrelatedKeyword);
-});
+When(
+  "Enter the unrelated keyword {string}",
+  async function (unrelatedKeyword: string) {
+    await searchPage.enterKeyword(unrelatedKeyword);
+  },
+);
 
 When("Press Enter to submit the keyword", async function () {
   await searchPage.submitSearch();
 });
 
-Then("Verify the URL contains the submitted query", async function () {
-  await resultsPage.verifyUrlContainsQuery(searchData.unrelatedKeyword);
-});
+Then(
+  "Verify the URL contains the submitted query {string}",
+  async function (unrelatedKeyword: string) {
+    await page.waitForURL(`**/*${unrelatedKeyword}*`);
+    await resultsPage.verifyUrlContainsQuery(unrelatedKeyword);
+  },
+);
 
 Then(
-  "Verify the results heading represents the submitted keyword",
-  async function () {
-    await expect(resultsPage.results.heading).toContainText(
-      searchData.unrelatedKeywordExpected,
-      { ignoreCase: true },
-    );
+  "Verify the results heading shows {string}",
+  async function (expectedHeading: string) {
+    await expect(resultsPage.results.heading).toContainText(expectedHeading, {
+      ignoreCase: true,
+    });
   },
 );
 

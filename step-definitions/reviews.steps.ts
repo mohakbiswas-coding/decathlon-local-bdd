@@ -2,11 +2,7 @@ import { When, Then, Before } from "@cucumber/cucumber";
 import { ReviewsPage } from "../pages/reviewsPage";
 import { page } from "../support/hooks";
 
-import productData from "../test-data/product.json";
-
 let reviewsPage: ReviewsPage;
-
-const reviewData = productData.reviews;
 
 Before(async function () {
   reviewsPage = new ReviewsPage(page);
@@ -16,13 +12,19 @@ When("Scroll to the Reviews section", async function () {
   await reviewsPage.scrollToReviews();
 });
 
-Then("Verify the Reviews heading is visible", async function () {
-  await reviewsPage.verifyHeadingIsVisible(reviewData.heading);
-});
+Then(
+  "Verify the Reviews heading {string} is visible",
+  async function (heading: string) {
+    await reviewsPage.verifyHeadingIsVisible(heading);
+  },
+);
 
-Then("Verify the overall rating is displayed", async function () {
-  await reviewsPage.verifyOverallRating(reviewData.overallRating);
-});
+Then(
+  "Verify the overall rating {string} is displayed",
+  async function (overallRating: string) {
+    await reviewsPage.verifyOverallRating(overallRating);
+  },
+);
 
 Then("Verify the review count link is displayed", async function () {
   await reviewsPage.verifyReviewCountLinkIsVisible();
@@ -43,17 +45,23 @@ Then("Verify review metadata is displayed where available", async function () {
   await reviewsPage.verifyReviewMetaIfAvailable();
 });
 
-Then("Verify multiple review entries can be seen", async function () {
-  await reviewsPage.verifyMultipleReviews(reviewData.entriesToCheck);
-});
-
-Then("Verify View all reviews is visible", async function () {
-  await reviewsPage.verifyViewAllIsVisible(reviewData.viewAllText);
-});
+Then(
+  "Verify at least {int} review entries can be seen",
+  async function (entriesToCheck: number) {
+    await reviewsPage.verifyMultipleReviews(entriesToCheck);
+  },
+);
 
 Then(
-  "Verify the section remains readable without overlapping content",
-  async function () {
-    await reviewsPage.verifyReviewsDoNotOverlap(reviewData.entriesToCheck);
+  "Verify the View all link {string} is visible",
+  async function (viewAllText: string) {
+    await reviewsPage.verifyViewAllIsVisible(viewAllText);
+  },
+);
+
+Then(
+  "Verify the first {int} reviews remain readable without overlapping content",
+  async function (entriesToCheck: number) {
+    await reviewsPage.verifyReviewsDoNotOverlap(entriesToCheck);
   },
 );

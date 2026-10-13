@@ -8,7 +8,6 @@ import { SearchResultsPage } from "../pages/searchResultsPage";
 import { page } from "../support/hooks";
 import { takeNormalScreenshot } from "../utils/ScreenshotUtil";
 
-import cartData from "../test-data/cart.json";
 import productData from "../test-data/product.json";
 import searchData from "../test-data/search.json";
 
@@ -17,10 +16,6 @@ let searchPage: SearchPage;
 let resultsPage: SearchResultsPage;
 let productPage: ProductPage;
 let cartPage: CartPage;
-
-const searchKeyword = searchData.e2eSearchKeyword;
-const expectedProductHref = `${productData.urls.productPath}${productData.product.id}`;
-const selectedSize = productData.size.toSelect;
 
 let cartCountBeforeAdd = 0;
 let selectedCardName = "";
@@ -50,53 +45,65 @@ Then("Verify the Search overlay and input are visible", async function () {
   await searchPage.verifySearchInputIsVisible();
 });
 
-When("Enter the KIPRUN product keyword", async function () {
-  await searchPage.enterKeyword(searchKeyword);
-  await searchPage.verifyInputHasValue(searchKeyword);
-});
+When(
+  "Enter the product keyword {string}",
+  async function (searchKeyword: string) {
+    await searchPage.enterKeyword(searchKeyword);
+    await searchPage.verifyInputHasValue(searchKeyword);
+  },
+);
 
 When("Submit the product search", async function () {
   await searchPage.submitSearch();
 });
 
-Then("Wait for results and verify the submitted query", async function () {
-  await resultsPage.waitForResults();
-  await resultsPage.verifyUrlContainsQuery(searchData.urls.queryParam);
-  const actualQuery = await resultsPage.getUrlQueryValue(
-    searchData.urls.queryParam,
-  );
-  expect(actualQuery.toLowerCase()).toContain(searchKeyword.toLowerCase());
-});
+Then(
+  "Wait for results and verify the submitted query {string}",
+  async function (searchKeyword: string) {
+    const queryParam = searchData.urls.queryParam;
+
+    await page.waitForURL((url) => url.searchParams.has(queryParam));
+    await resultsPage.waitForResults();
+    await resultsPage.verifyUrlContainsQuery(queryParam);
+
+    const actualQuery = await resultsPage.getUrlQueryValue(queryParam);
+    expect(actualQuery.toLowerCase()).toContain(searchKeyword.toLowerCase());
+  },
+);
 
 When(
-  "Select the matching KIPRUN product card and open its PDP",
-  async function () {
+  "Select the {string} product card {string} with ID {string} and open its PDP",
+  async function (brand: string, searchName: string, productId: string) {
+    const expectedProductHref = `${productData.urls.productPath}${productId}`;
     selectedCardName = await resultsPage.openProductByName(
-      productData.product.searchName,
+      searchName,
       expectedProductHref,
     );
-    expect(selectedCardName.toLowerCase()).toContain("kiprun");
+    expect(selectedCardName.toLowerCase()).toContain(brand.toLowerCase());
   },
 );
 
 Then(
-  "Verify the selected product identity, image, price, and size options",
-  async function () {
+  "Verify the selected product {string} {string} with ID {string} shows image, price, and size options",
+  async function (brand: string, productName: string, productId: string) {
     await productPage.waitForProductToLoad();
     await productPage.verifyUrlHasProductPath(productData.urls.productPath);
-    await productPage.verifyBrand(productData.product.brand);
-    await productPage.verifyNameContains(productData.product.name);
-    await productPage.verifyProductId(productData.product.id);
+    await productPage.verifyBrand(brand);
+    await productPage.verifyNameContains(productName);
+    await productPage.verifyProductId(productId);
     await productPage.verifyPriceAndImageAreVisible();
     await productPage.verifySizeOptionsAndAddToCartAreVisible();
   },
 );
 
-When("Record the Cart badge and select size 6.5", async function () {
-  cartCountBeforeAdd = await productPage.getCartCount();
-  await productPage.selectSize(selectedSize);
-  await productPage.verifyLowStockIfAvailable(productData.size.lowStockLabel);
-});
+When(
+  "Record the Cart badge and select size {string} with low-stock label {string}",
+  async function (size: string, lowStockLabel: string) {
+    cartCountBeforeAdd = await productPage.getCartCount();
+    await productPage.selectSize(size);
+    await productPage.verifyLowStockIfAvailable(lowStockLabel);
+  },
+);
 
 When("Add the selected product to the Cart", async function () {
   await productPage.clickAddToCart();
@@ -120,24 +127,34 @@ When("Open the Cart page", async function () {
 });
 
 Then(
-  "Verify the Cart contains the selected product and size",
-  async function () {
+  "Verify the Cart contains {string} {string} in size {string} with quantity {string}",
+  async function (
+    brand: string,
+    productName: string,
+    size: string,
+    quantity: string,
+  ) {
     await cartPage.verifyItemCount(1);
-    await cartPage.verifyItemBrand(cartData.brand);
-    await cartPage.verifyItemName(productData.product.name);
+    await cartPage.verifyItemBrand(brand);
+    await cartPage.verifyItemName(productName);
     await cartPage.verifyItemImageIsVisible();
-    await cartPage.verifyItemSize(selectedSize);
-    await cartPage.verifyItemQuantity(cartData.quantity);
+    await cartPage.verifyItemSize(size);
+    await cartPage.verifyItemQuantity(quantity);
   },
 );
 
 Then(
-  "Verify order totals and that guest checkout requires login",
-  async function () {
-    await cartPage.verifySellingPrice(cartData.prices.selling);
-    await cartPage.verifyMrp(cartData.prices.mrp);
-    await cartPage.verifySummaryDiscount(cartData.prices.discount);
-    await cartPage.verifySummaryTotal(cartData.prices.total);
+  "Verify order totals {string} {string} {string} {string} and that guest checkout requires login",
+  async function (
+    selling: string,
+    mrp: string,
+    discount: string,
+    total: string,
+  ) {
+    await cartPage.verifySellingPrice(selling);
+    await cartPage.verifyMrp(mrp);
+    await cartPage.verifySummaryDiscount(discount);
+    await cartPage.verifySummaryTotal(total);
     await cartPage.verifyGuestCheckoutAction();
     await takeNormalScreenshot(page, "TC_35 end-to-end cart summary");
   },
