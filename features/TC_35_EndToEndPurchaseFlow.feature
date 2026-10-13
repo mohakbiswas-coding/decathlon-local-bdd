@@ -1,6 +1,6 @@
 Feature: Decathlon India - End-to-end product purchase flow (guest checkout)
 
-  @TC_35 @smoke
+  @TC_35 @smoke @regression
   Scenario: TC_35 - End-to-end product purchase flow (guest checkout)
 
     Given Launch the Decathlon homepage

@@ -1,6 +1,6 @@
 Feature: Decathlon India - Search-result product cards
 
-  @TC_23 @sanity
+  @TC_23 @sanity @regression
   Scenario: TC_23 - Search-result product cards
 
     Given Open a Search results page

@@ -1,6 +1,6 @@
 Feature: Decathlon India - Core product information
 
-  @TC_26 @sanity
+  @TC_26 @sanity @regression
   Scenario: TC_26 - Core product information
 
     Given Open the valid product URL for the product ID

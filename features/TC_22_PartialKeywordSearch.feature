@@ -1,6 +1,6 @@
 Feature: Decathlon India - Partial keyword search
 
-  @TC_22 @smoke
+  @TC_22 @smoke @sanity @regression
   Scenario: TC_22 - Partial keyword search
 
     Given Launch the Decathlon website

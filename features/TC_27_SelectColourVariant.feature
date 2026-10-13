@@ -1,6 +1,6 @@
 Feature: Decathlon India - Select colour variant
 
-  @TC_27 @sanity
+  @TC_27 @sanity @regression
   Scenario: TC_27 - Select colour variant
 
     Given Open the Product Details Page

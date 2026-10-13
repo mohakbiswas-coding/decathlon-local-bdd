@@ -1,6 +1,6 @@
 Feature: Decathlon India - Cart item verification
 
-  @TC_30 @smoke
+  @TC_30 @smoke @sanity @regression
   Scenario: TC_30 - Cart item verification
 
     Given Add the product to the cart with the chosen size
