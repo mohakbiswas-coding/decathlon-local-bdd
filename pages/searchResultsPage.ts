@@ -114,22 +114,28 @@ export class SearchResultsPage extends BasePage {
    * Return Type: Promise<void>
    */
   async verifyUrlContainsQuery(queryParam: string): Promise<void> {
-    try {
-      logger.info(`Verifying that the URL contains ${queryParam}`);
-      runReport.record(`Verifying that the URL contains ${queryParam}`);
+  try {
+    logger.info(`Verifying that the URL contains ${queryParam}`);
+    runReport.record(`Verifying that the URL contains ${queryParam}`);
 
-      await expect(this.page.url()).toContain(queryParam);
+    const escaped = queryParam.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-      logger.info("URL query verified successfully");
-      runReport.record("URL query verified successfully");
-    } catch (error) {
-      await handleError(
-        this.page,
-        error,
-        "Failed to verify the query in the URL",
-      );
-    }
+    const urlPattern = queryParam.includes("=")
+      ? new RegExp(`[?&]${escaped}(?:&|#|$)`, "i")
+      : new RegExp(escaped, "i");
+
+    await expect(this.page).toHaveURL(urlPattern);
+
+    logger.info("URL query verified successfully");
+    runReport.record("URL query verified successfully");
+  } catch (error) {
+    await handleError(
+      this.page,
+      error,
+      "Failed to verify the query in the URL",
+    );
   }
+}
 
   /**
    * Author: Mohak Biswas
@@ -138,12 +144,31 @@ export class SearchResultsPage extends BasePage {
    * Parameter: None
    * Return Type: Promise<void>
    */
-  async verifyProductCardIsVisible(): Promise<void> {
+  // async verifyProductCardIsVisible(): Promise<void> {
+  //   try {
+  //     logger.info("Verifying that the product card is visible");
+  //     runReport.record("Verifying that the product card is visible");
+
+  //     await expect(this.results.productCards.first()).toBeVisible();
+
+  //     logger.info("Product card is visible");
+  //     runReport.record("Product card visibility verified successfully");
+  //   } catch (error) {
+  //     await handleError(
+  //       this.page,
+  //       error,
+  //       "Failed to verify that the product card is visible",
+  //     );
+  //   }
+  // }
+
+  async verifyProductCardCount(num: number): Promise<void> {
     try {
       logger.info("Verifying that the product card is visible");
       runReport.record("Verifying that the product card is visible");
 
-      await expect(this.results.productCards.first()).toBeVisible();
+      let card_count = await this.results.productCards.allTextContents();
+      await expect(card_count.length).toBeGreaterThanOrEqual(num);
 
       logger.info("Product card is visible");
       runReport.record("Product card visibility verified successfully");

@@ -14,10 +14,10 @@ Feature: Decathlon India - Partial keyword search
     When Press Enter to submit the partial keyword
     And Wait for the Search results page to load
     Then Verify the URL contains the search query parameter "<queryParam>"
-    And Verify at least "<cardsToCheck>" product results are displayed
+    And Verify at least <cardsToCheck> product results are displayed
 
-        Examples:
+    Examples:
       | partialKeyword | queryParam | cardsToCheck |
-      | Cy             | query      | 2            |
-      | Run            | query      | 2            |
-      | Bac            | query      | 2            |
+      | Cy             | query=Cy   | 2            |
+      | Run            | query=Run  | 2            |
+      | Bac            | query=Bac  | 2            |

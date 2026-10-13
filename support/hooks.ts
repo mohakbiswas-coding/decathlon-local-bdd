@@ -1,24 +1,10 @@
-import {
-  Before,
-  After,
-  BeforeAll,
-  AfterAll,
-  Status,
-  setDefaultTimeout,
-} from "@cucumber/cucumber";
+import { Before, After, BeforeAll, AfterAll, Status, setDefaultTimeout } from "@cucumber/cucumber";
 
 import * as dotenv from "dotenv";
 
 dotenv.config();
 
-import {
-  chromium,
-  devices,
-  selectors,
-  Browser,
-  BrowserContext,
-  Page,
-} from "@playwright/test";
+import { chromium, selectors, Browser, BrowserContext, Page } from "@playwright/test";
 
 import { takeErrorScreenshot } from "../utils/ScreenshotUtil";
 
@@ -36,10 +22,8 @@ BeforeAll(async () => {
   });
 });
 
-// One fresh browser context per scenario, as the hybrid framework has per test file.
 Before(async () => {
   context = await browser.newContext({
-    ...devices["Desktop Chrome"],
     baseURL: process.env.BASE_URL!,
   });
 

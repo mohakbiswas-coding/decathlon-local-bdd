@@ -17,7 +17,6 @@ export default defineConfig({
   reporter: 'html',
 
   use: {
-    baseURL: process.env.BASE_URL,
     testIdAttribute: 'data-test-id',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',

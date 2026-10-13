@@ -7,7 +7,7 @@ export class SearchResultsLocators {
 
   constructor(page: Page) {
     this.heading = page.locator("div[class*='md:text-size']");
-    this.productCards = page.getByTestId('product-card-link');
+    this.productCards = page.locator('div[class*="mb-8 grid"] > div > a');
     this.loader = page.getByTestId('loader');
   }
 }

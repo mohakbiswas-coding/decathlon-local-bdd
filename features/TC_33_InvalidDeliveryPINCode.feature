@@ -10,9 +10,11 @@ Feature: Decathlon India - Invalid delivery PIN code
     And Verify the login message is displayed for a guest user
     When Locate the Enter pincode field, clear it and enter the invalid PIN code "<invalidPincode>"
     And Click the arrow submit button
-    Then Wait for validation and verify the red error message "<errorMessage>" appears
+    Then Wait for validation and verify the red error message "Unable to find location for this pincode" appears
     When Close the delivery drawer using X
 
     Examples:
-      | invalidPincode | errorMessage                             |
-      | 723000         | Unable to find location for this pincode |
+      | invalidPincode |
+      | 723000         |
+      | 123456         |
+      | 789999         |

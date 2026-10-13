@@ -10,3 +10,5 @@ Feature: Decathlon India - Search-result product cards
     Examples:
       | searchKeyword | cardsToCheck |
       | Shoes for men | 2            |
+      | Cycle         | 2            |
+      | Gloves        | 2            |

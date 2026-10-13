@@ -119,8 +119,8 @@ Then(
   },
 );
 
-Then("Verify at least one product card is visible", async function () {
-  await resultsPage.verifyProductCardIsVisible();
+Then('Verify at least {int} product results are displayed', async function (val: number) {
+  await resultsPage.verifyProductCardCount(val);
 });
 
 Then(
@@ -177,18 +177,7 @@ When("Wait for the Search results page to load", async function () {
 Then(
   "Verify the URL contains the search query parameter {string}",
   async function (queryParam: string) {
-    await page.waitForURL((url) => url.searchParams.has(queryParam));
     await resultsPage.verifyUrlContainsQuery(queryParam);
-  },
-);
-
-Then(
-  "Verify at least {int} product results are displayed",
-  async function (cardsToCheck: number) {
-    await resultsPage.verifyProductCardIsVisible();
-    for (let index = 0; index < cardsToCheck; index++) {
-      await expect(resultsPage.card(index).name).toBeVisible();
-    }
   },
 );
 

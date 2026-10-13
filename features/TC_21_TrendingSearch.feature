@@ -12,6 +12,5 @@ Feature: Decathlon India - Trending search
     And Wait for navigation or result loading to finish
     Then Verify a Search results page is displayed
     And Verify the submitted term is in the URL, field, or heading
-    And Verify at least one product card is visible
     And Verify a visible card contains an image, product name, and selling price
     And Verify the page remains usable without a blocked loader

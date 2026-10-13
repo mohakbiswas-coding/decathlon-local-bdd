@@ -12,9 +12,9 @@ Feature: Decathlon India - Reviews section
     And Verify at least one written review title is displayed
     And Verify review metadata is displayed where available
     And Verify at least <entriesToCheck> review entries can be seen
-    And Verify the View all link "<viewAllText>" is visible
+    And Verify the View all link "View all reviews" is visible
     And Verify the first <entriesToCheck> reviews remain readable without overlapping content
 
     Examples:
-      | heading | overallRating | entriesToCheck | viewAllText      |
-      | Reviews | 4.7           | 2              | View all reviews |
+      | heading | overallRating | entriesToCheck |
+      | Reviews | 4.7           | 2              |

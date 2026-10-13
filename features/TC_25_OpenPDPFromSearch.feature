@@ -17,3 +17,5 @@ Feature: Decathlon India - Open PDP from Search
     Examples:
       | searchKeyword |
       | Shoes for men |
+      | Cycle         |
+      | Gloves        |

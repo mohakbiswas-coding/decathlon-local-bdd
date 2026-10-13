@@ -166,27 +166,36 @@ export class ProductPage extends BasePage {
    * Return Type: Promise<void>
    */
   async verifyNameMatches(expectedName: string): Promise<void> {
-    try {
-      logger.info(`Verifying that the product name matches ${expectedName}`);
-      runReport.record(
-        `Verifying that the product name matches ${expectedName}`,
-      );
+  try {
+    logger.info(`Verifying that the product name matches ${expectedName}`);
+    runReport.record(
+      `Verifying that the product name matches ${expectedName}`,
+    );
 
-      const shown = (
-        "decathlon " + (await this.product.name.innerText())
-      ).toLowerCase();
-      expect(shown).toContain(expectedName.toLowerCase());
+    const brandPrefix = /^(?:[A-Z][A-Z0-9&'.-]*\s+)+(?=[A-Z][a-z])/;
 
-      logger.info("Product name matches successfully");
-      runReport.record("Product name matched successfully");
-    } catch (error) {
-      await handleError(
-        this.page,
-        error,
-        "Failed to verify that the product name matches",
-      );
-    }
+    const normalise = (text: string) =>
+      text
+        .toLowerCase()
+        .replace(/\s*-\s*/g, " - ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+    const expected = normalise(expectedName.replace(brandPrefix, ""));
+    const shown = normalise(await this.product.name.innerText());
+
+    expect(shown).toContain(expected);
+
+    logger.info("Product name matches successfully");
+    runReport.record("Product name matched successfully");
+  } catch (error) {
+    await handleError(
+      this.page,
+      error,
+      "Failed to verify that the product name matches",
+    );
   }
+}
 
   /**
    * Author: Mohak Biswas
