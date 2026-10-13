@@ -55,7 +55,7 @@ Then("Verify the Search input is visible in the overlay", async function () {
 });
 
 Then("Verify Trending searches is displayed when available", async function () {
-  await searchPage.verifyTrendingSearchesIfAvailable();
+  await searchPage.verifyTrendingSearchesIfAvailable(searchData.overlaySections.trending);
 });
 
 Then(
@@ -162,7 +162,7 @@ Then("Verify the clear X control appears in the input", async function () {
 Then(
   "Observe the available discovery or suggestion content",
   async function () {
-    await searchPage.verifyTrendingSearchesIfAvailable();
+    await searchPage.verifyTrendingSearchesIfAvailable(searchData.overlaySections.trending);
   },
 );
 
@@ -177,6 +177,7 @@ When("Wait for the Search results page to load", async function () {
 Then(
   "Verify the URL contains the search query parameter {string}",
   async function (queryParam: string) {
+    await page.waitForURL((url) => url.searchParams.has(queryParam));
     await resultsPage.verifyUrlContainsQuery(queryParam);
   },
 );

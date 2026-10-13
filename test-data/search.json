@@ -1,7 +1,8 @@
 {
   "overlaySections": {
     "recommended": "Recommended For You",
-    "bestsellers": "Bestsellers"
+    "bestsellers": "Bestsellers",
+    "trending": "Trending searches"
   },
   "urls": {
     "searchResults": "/search?query=",

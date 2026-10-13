@@ -121,8 +121,21 @@ Then(
 );
 
 When("Open the Cart page", async function () {
-  await productPage.closeAddToCartConfirmationIfVisible();
-  await productPage.goToCart();
+  const closeButton = page.locator("div[aria-label='Close']");
+
+  // Wait up to 5s for either the confirmation popup or the cart page
+  await Promise.race([
+    closeButton.waitFor({ state: "visible", timeout: 5000 }).catch(() => {}),
+    page.waitForURL("**/checkout/cart", { timeout: 5000 }).catch(() => {}),
+  ]);
+
+  if (!page.url().includes("/checkout/cart")) {
+    if (await closeButton.isVisible()) {
+      await closeButton.click();
+    }
+    await productPage.goToCart();
+  }
+
   await cartPage.waitForCart();
 });
 

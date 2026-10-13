@@ -189,29 +189,37 @@ export class SearchResultsPage extends BasePage {
    * Return Type: Promise<void>
    */
   async logResultSummary(namesToInspect = 3): Promise<void> {
-    try {
-      logger.info("Logging the result summary");
-      runReport.record("Logging the result summary");
+  try {
+    logger.info("Logging the result summary");
+    runReport.record("Logging the result summary");
 
-      const count = await this.results.productCards.count();
-      logger.info(`Product cards displayed: ${count}`);
-      runReport.record(`Product cards displayed: ${count}`);
-      for (let i = 0; i < Math.min(count, namesToInspect); i++) {
-        const name = (await this.card(i).name.innerText()).trim();
+    const count = await this.results.productCards.count();
+    logger.info(`Product cards displayed: ${count}`);
+    runReport.record(`Product cards displayed: ${count}`);
+
+    for (let i = 0; i < Math.min(count, namesToInspect); i++) {
+      const nameLocator = this.card(i).name;
+
+      if (await nameLocator.isVisible()) {
+        const name = (await nameLocator.innerText()).trim();
         logger.info(`Result ${i + 1}: ${name}`);
         runReport.record(`Result ${i + 1}: ${name}`);
+      } else {
+        logger.info(`Result ${i + 1}: name not displayed`);
+        runReport.record(`Result ${i + 1}: name not displayed`);
       }
-
-      logger.info("Result summary logged successfully");
-      runReport.record("Result summary logged successfully");
-    } catch (error) {
-      await handleError(
-        this.page,
-        error,
-        "Failed to log the result summary",
-      );
     }
+
+    logger.info("Result summary logged successfully");
+    runReport.record("Result summary logged successfully");
+  } catch (error) {
+    await handleError(
+      this.page,
+      error,
+      "Failed to log the result summary",
+    );
   }
+}
 
   /**
    * Author: Mohak Biswas

@@ -171,14 +171,14 @@ export class SearchPage extends BasePage {
    * Parameter: None
    * Return Type: Promise<void>
    */
-  async verifyTrendingSearchesIfAvailable(): Promise<void> {
+  async verifyTrendingSearchesIfAvailable(query: string): Promise<void> {
     try {
       logger.info("Verifying the trending searches if available");
       runReport.record("Verifying the trending searches if available");
 
       await this.verifyIfAvailable(
         this.search.trendingTitle,
-        "Trending searches",
+        query,
       );
 
       logger.info("Trending searches check completed successfully");
