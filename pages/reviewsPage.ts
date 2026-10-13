@@ -1,6 +1,4 @@
 // Reviews page
-// Author: Mohak Biswas
-// Description: The Reviews section of the PDP.
 
 import { expect, Page } from "@playwright/test";
 import { ReviewsLocators } from "../ui-store/reviews.locators";

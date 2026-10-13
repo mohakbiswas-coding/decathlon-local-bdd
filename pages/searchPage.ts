@@ -1,6 +1,4 @@
 // Search page
-// Author: Mohak Biswas
-// Description: The Search overlay that opens from the header.
 
 import { expect, Page } from "@playwright/test";
 import { SearchLocators } from "../ui-store/search.locators";

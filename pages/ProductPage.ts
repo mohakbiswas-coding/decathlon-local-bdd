@@ -1,6 +1,4 @@
 // Product page
-// Author: Mohak Biswas
-// Description: Product Details Page (PDP).
 
 import { expect, Locator, Page } from "@playwright/test";
 import { HeaderLocators } from "../ui-store/header.locators";

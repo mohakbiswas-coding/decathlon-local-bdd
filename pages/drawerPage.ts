@@ -1,6 +1,4 @@
 // Drawer page
-// Author: Mohak Biswas
-// Description: The right-side drawers on the PDP - Product details, Product specifications, Delivery location.
 
 import { expect, Page } from "@playwright/test";
 import { DrawerLocators } from "../ui-store/drawer.locators";

@@ -32,7 +32,6 @@ export class BasePage {
     return locator.isVisible({ timeout }).catch(() => false);
   }
 
-  /** For "when available / when applicable" checks: asserts only if the element is shown. */
   async verifyIfAvailable(locator: Locator, label: string): Promise<void> {
     if (await this.isVisible(locator)) {
       await expect(locator).toBeVisible();
@@ -42,14 +41,12 @@ export class BasePage {
     }
   }
 
-  /** Asserts the element shows a money value, e.g. expected "4999" matches "₹4,999". */
   async verifyAmount(locator: Locator, expectedDigits: string): Promise<void> {
     await expect(locator).toBeVisible();
     const text = (await locator.innerText()).replace(/,/g, "");
     expect(text).toMatch(new RegExp(`(^|\\D)${expectedDigits}(\\D|$)`));
   }
 
-  /** The look of an element that changes when it is selected (border, background, weight). */
   async getHighlightStyle(locator: Locator): Promise<string> {
     return locator.evaluate((element) => {
       const style = getComputedStyle(element);

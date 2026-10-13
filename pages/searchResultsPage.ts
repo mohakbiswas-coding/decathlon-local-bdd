@@ -1,6 +1,4 @@
 // Search results page
-// Author: Mohak Biswas
-// Description: The search results page with its product cards.
 
 import { expect, Page } from "@playwright/test";
 import { ProductCardLocators } from "../ui-store/productCard.locators";
