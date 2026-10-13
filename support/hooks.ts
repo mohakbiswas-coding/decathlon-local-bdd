@@ -29,7 +29,6 @@ export let context: BrowserContext;
 export let page: Page;
 
 BeforeAll(async () => {
-  // Same test-id attribute as the hybrid framework (playwright.config.ts -> testIdAttribute)
   selectors.setTestIdAttribute("data-test-id");
 
   browser = await chromium.launch({
