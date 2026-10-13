@@ -46,7 +46,6 @@ Before(async () => {
   page = await context.newPage();
 });
 
-// Failure evidence, same as the hybrid test.afterEach: ERROR-<test title>-<time>.png
 After(async function ({ pickle, result }) {
   if (result?.status === Status.FAILED) {
     await takeErrorScreenshot(page, pickle.name);
