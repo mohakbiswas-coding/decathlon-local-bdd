@@ -36,7 +36,7 @@ class RunReport {
   }
 
   file(): string {
-    return path.join(REPORT_DIR, `${envOrDefault("REPORT_NAME", "Phramacy_Report")}.json`);
+    return path.join(REPORT_DIR, `${envOrDefault("REPORT_NAME", "Decathlon")}.json`);
   }
 
   save(): string {

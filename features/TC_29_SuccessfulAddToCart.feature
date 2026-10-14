@@ -11,8 +11,8 @@ Feature: Decathlon India - Successful Add to Cart
     When Click Add to cart and wait for the add operation to complete
     Then Verify Add to cart changes to Go to cart
     And Verify the Cart badge increases by one
-    And Verify no size-validation message "<sizeError>" is displayed
+    And Verify no size-validation message "Please select a size" is displayed
 
     Examples:
-      | size | lowStockLabel | sizeError            |
-      | 6.5  | 3 left        | Please select a size |
+      | size | lowStockLabel |
+      | 6.5  | 3 left        |
