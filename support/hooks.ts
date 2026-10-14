@@ -1,11 +1,12 @@
 import { Before, After, BeforeAll, AfterAll, Status, setDefaultTimeout } from "@cucumber/cucumber";
+import path from 'path';
+import dotenv from "dotenv";
 
-import * as dotenv from "dotenv";
-
-dotenv.config();
+dotenv.config({
+  path: path.resolve(__dirname, '..', '.env'),
+});
 
 import { chromium, selectors, Browser, BrowserContext, Page } from "@playwright/test";
-
 import { takeErrorScreenshot } from "../utils/ScreenshotUtil";
 
 setDefaultTimeout(60000);
@@ -17,8 +18,10 @@ export let page: Page;
 BeforeAll(async () => {
   selectors.setTestIdAttribute("data-test-id");
 
+  const headless = process.env.HEADLESS?.toLowerCase() === "true";
+
   browser = await chromium.launch({
-    headless: process.env.HEADLESS === "true",
+    headless: headless,
   });
 });
 

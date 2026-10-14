@@ -20,23 +20,6 @@ export class ProductPage extends BasePage {
 
   /**
    * Author: Mohak Biswas
-   * Finds an enabled size option other than the given size.
-   *
-   * @param size Size already in use
-   * @returns Promise<Locator>
-   */
-  private async findOtherEnabledSize(size: string): Promise<Locator> {
-    const options = this.product.enabledSizeOptions;
-    const count = await options.count();
-    for (let i = 0; i < count; i++) {
-      const text = (await options.nth(i).innerText()).trim();
-      if (!text.startsWith(size)) return options.nth(i);
-    }
-    throw new Error(`No other enabled size found next to ${size}`);
-  }
-
-  /**
-   * Author: Mohak Biswas
    * Method Name: getMainImageSource
    * Description: Returns the src attribute of the main product image.
    * Parameter: None

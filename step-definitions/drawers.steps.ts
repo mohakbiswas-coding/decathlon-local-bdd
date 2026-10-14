@@ -3,8 +3,6 @@ import { DrawerPage } from "../pages/drawerPage";
 import { page } from "../support/hooks";
 import { takeNormalScreenshot } from "../utils/ScreenshotUtil";
 
-import productData from "../test-data/product.json";
-
 let drawerPage: DrawerPage;
 
 Before(async function () {
